@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>WebApp Cotizaciones - Marshall Service</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Creador de Cotizaciones - Marshall Service</h1>
+
+    <form id="quoteForm" onsubmit="return false;">
+      <label>N° Cotización
+        <input type="text" id="cotNum" oninput="actualizarPreview()" required />
+      </label>
+    
+      <label>Fecha
+        <input type="date" id="fecha" oninput="actualizarPreview()" />
+      </label>
+    
+
+      <label>Cliente
+        <input type="text" id="cliente" oninput="actualizarPreview()" required />
+      </label>
+
+      <div id="servicesContainer"></div>
+
+      <button type="button" onclick="addService()">➕ Agregar Servicio</button>
+      <button type="button" onclick="downloadPDF()">⬇️ Descargar PDF</button>
+      <button type="button" onclick="imprimirCotizacion()">🖨️ Imprimir</button>
+    </form>
+
+    <div id="preview"></div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
